@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 1.大气而简约 
+            飞机
+         2. 官网，访问设备多种多样
+            飞机随着设备大小改变
+            SVG 图片 由数学图形构成
+            不同设备图片处理问题
+      -->
+  <div class="section section-1 ready">
+    <div class="plane-wrapper" style="left:315.5px">
+      <img src="http://fir.im/images/plane.svg" alt="" class="plane">
+      <div class="rotate-container">
+          <img src="http://fir.im/images/propeller.svg" alt="" class="propeller">
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+    const section = document.querySelector('.section');
+    // 事件监听 兼容性的  IE和Chrome
+    document.body.onmousewheel= function(event){
+        //IE9 以下
+        section.classList.remove('ready');
+        section.classList.add('animate-out');
+    }
+    document.body.addEventListener('DOMMouseScroll',function(event){
+        //现代浏览器
+        // 飞出去
+        section.classList.remove('ready');
+        section.classList.add('animate-out');
+    });
+</script>
+</html>
