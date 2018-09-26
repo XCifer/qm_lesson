@@ -1,0 +1,15 @@
+{
+  "name": "Douban",
+  "version": "1.0.0",
+  "description": "- 语义化标签使用\r   header nav SEO 对机器更友好\r   logo h1 fz0 图片对机器不友好",
+  "main": "js.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        height: 50px;
+        width: 50px;
+        background: green;
+        line-height: 50px;
+        text-align: center;
+        font-size: 20px;
+        display: inline-block;
+        margin: 10px;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+</body>
+<script>
+    var boxes = document.querySelectorAll('.box');
+    //let会创建一个块级作用域
+    for (let i=0;i<=10;i++){
+        //立即执行函数
+        (function(i){
+            alert(i)
+        })(i);
+        //addEventListener 异步执行
+        boxes[i].addEventListener('click',()=>{
+        //函数作用域
+            alert(i+1);
+        });
+
+    }
+
+    // for (var i = 0; i < boxs.length; i++) {
+    //     (function (i) {
+    //         boxs[i].addEventListener('click', function () {
+    //             alert(i + 1)
+    //         })
+    //     })(i)
+    // } 闭包
+
+    // boxes.forEach(function(box){
+    //     box.addEventListener('click',function(){
+    //         alert(this.innerHTML);
+    //     })
+    // })
+
+
+</script>
+</html>

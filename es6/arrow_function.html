@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>arrow_function</title>
+    <style>
+    .wrap{
+        /* 设备的100%高度 */
+        min-height: 100vh;
+        display: flex;
+        /* 横轴居中 */
+        justify-content: center;
+        /* 纵轴居中 */
+        align-items: center;
+        font-family: sans-serif;
+        font-weight: 100;
+        color: white;
+    }
+    .box{
+        width: 50px;
+        background: black url('https://unsplash.it/1500/1500?image=560&blur=0.5') center fixed no-repeat;
+        padding: 50px;
+        height: 50px;
+        transition: width .2s ,height .2s;
+    }
+    .box.openning{
+        width: 500px;
+        height: 500px;
+    }
+    .box h2{
+        position:absolute;
+        widows: 100%;
+        font-size: 100px;
+        top: 0;
+        transform: translateX(-200%);
+        transition: all .5s;
+        }
+    .box p{
+        position: absolute;
+        width: 100%;
+        transform: translateX(200%);
+        transition: all .5s;
+        bottom: 0;
+    }
+    .box.open >*{
+        transform: translateX(0%);
+
+    }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box">
+            <h2>Wes bos</h2>
+            <p class="social">@Wesbos</p>
+        </div>
+    </div>
+</body>
+<script>
+
+    const box = document.querySelector(".box");
+    box.addEventListener('click',function(){
+        console.log(this);
+        let first = 'openning';
+        let second = 'open';
+        // es6 toggle api
+        if (this.classList.contains(first)){           
+            [first,second] = [second, first];//swap     
+        }
+        this.classList.toggle(first);
+        let that = this;
+        setTimeout(function(){
+            // 函数内部函数，新的作用域
+            // this 指针 如果这个函数是个普通函数， this 指向window
+            // console.log(that);
+            that.classList.toggle(second);
+        },250);
+        setTimeout(()=>{
+            // 箭头函数内部this 指向父级
+            this.classList.toggle(second);
+        },250);
+
+    });
+    //5种基本数据类型
+    const num =1;
+    const str = 'abc';
+    const isok = false;
+    const a = undefined;
+    const b = null;
+
+    //Object复杂数据类型
+    //json：下标为字符串的对象
+    // 祖先都是Object，prototype 链
+    const obj ={ name: '刘强东'}
+    //数组：下标为数字的对象
+    const remark = ['不知妻美','我到美国是去学习的'];
+    const funcA =function() { console.log('help me!');
+    }
+    // 函数是对象
+    // Object.prototype.toString.call(obj) 
+    console.log(Object.prototype.toString.call(obj),
+     Object.prototype.toString.call(remark), 
+     Object.prototype.toString.call(funcA));
+//单一功能
+//function 对象 
+//（）=>(
+//)
+
+</script>
+</html>
