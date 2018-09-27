@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
 }
-
+img{
+    max-width: 100%;
+}
 body{
     background: yellow;
     height: 100%;
@@ -10,9 +12,9 @@ body{
 
 .plane-wrapper{
     position: absolute;
-    top: 50%;
     display: inline-block;
     transition: all .5s;
+    max-width: 100%;
     animation: undulate 6s linear infinite alternate;
 }
 @keyframes undulate{
