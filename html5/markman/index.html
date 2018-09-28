@@ -13,12 +13,28 @@
         a{
             text-decoration: none;
         }
+        ul{
+            list-style: none;
+        }
         a:link{
             color: #3377aa;
         }
         a:visited{
             color: #666699;
         }
+        
+        .nav-top{
+            width: 100%;
+            height:28px;
+            background-color: #545652;
+        }
+        .nav-movie{
+            width: 100%;
+            height: 116px;
+            margin-bottom: 40px;
+            background-color: #f0f3f5;
+        }
+
         .content{
             width: 1040px;
             margin: 0 auto;
@@ -27,7 +43,6 @@
             width: 675px;
             float: left;
             height: 500px;
-            background-color: red;
         }
         .aside{
             width: 300px;
@@ -78,9 +93,43 @@
             margin-top: 8px;
             font-size: 13px;
         }
+        .billboard-hd h2{
+            font-size: 16px;
+            padding-bottom: 15px;
+            border-bottom: #eeeeee 1px solid;
+        }
+        .billboard-hd span{
+            margin-left: 12px;
+            font-size: 13px;
+        }
+        .ad{
+            margin-bottom: 20px;
+        }
+        .billboard-bd .order{
+            width:20px;
+            font-size: 9px;
+            text-align: center;
+        }
+        .billboard-bd td{
+            padding: 7px 0;
+            width: 100%;
+        }
+        .billboard-bd .title{
+            line-height: 21px;
+            padding-left: 5px;
+        }
+        .billboard-bd td{
+            border-bottom: #eeeeee 1px solid;
+        }
     </style>
 </head>
 <body>
+    <div class="nav-top">
+
+    </div>
+    <div class="nav-movie">
+
+    </div>
     <div class="content">
         <div class="article"></div>
         <div class="aside">
@@ -92,9 +141,10 @@
                 </ul>
             </div>
             <div class="ad">
+                    <img style="width: 100%;" src="https://oimagea3.ydstatic.com/image?id=-5023792549107421670&amp;product=adpublish&amp;w=300&amp;h=250&amp;sc=0&amp;rm=0">
             </div>
             <div class="hot-link">
-                <h2>电影活动&nbsp;&nbsp;&nbsp;&nbsp;....</h2>
+                <h2>电影活动&nbsp;&nbsp;&nbsp;....</h2>
                 <ul>
                     <li>
                         <a href="#" target="blank">今晚我有空 |看完这电影想立马丢掉电脑！</a>
@@ -103,6 +153,60 @@
                         <a href="#" target="blank">好莱坞电影工业深度探访交流</a>
                     </li>
                 </ul>
+            </div>
+            <div class="billboard-hd">
+                <h2>一周口碑榜
+                    <span>
+                        <a href="">更多榜单»</a>
+                    </span>
+                </h2>
+            </div>
+            <div class="billboard-bd">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="order">1</td>
+                            <td class="title"><a href="#">幸福的拉扎罗</a></td>
+                        </tr>
+                        <tr>
+                            <td class="order">2</td>
+                            <td class="title"><a href="#">特工</a></td>
+                        </tr>
+                        <tr>
+                            <td class="order">3</td>
+                            <td class="title"><a href="#">不留痕迹</a></td>
+                        </tr>
+                        <tr>
+                            <td class="order">4</td>
+                            <td class="title"><a href="#">解除好友2：暗网</a></td>
+                        </tr>
+                        <tr>
+                            <td class="order">5</td>
+                            <td class="title"><a href="#">冒牌上尉</a></td>
+                        </tr>
+                        <tr>
+                            <td class="order">6</td>
+                            <td class="title"><a href="#">与神同行2：因与缘</a></td>
+                        </tr>
+                        <tr>
+                            <td class="order">7</td>
+                            <td class="title"><a href="#">你的婚礼</a></td>
+                        </tr>
+                        <tr>
+                            <td class="order">8</td>
+                            <td class="title"><a href="#">八年级</a></td>
+                        </tr>
+                        <tr>
+                            <td class="order">9</td>
+                            <td class="title"><a href="#">江湖儿女</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="order">10</td>
+                            <td class="title"><a href="#">影</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
