@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+        }
+        .box:before .box:after{
+            line-height: 2;
+            display: block;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #333333;
+        }
+        .box:before{
+            content: "";
+            background: red;
+            top: 0;
+        }
+        .box:after{
+            content: "";
+            display: block;
+            background-color: green;
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        我是一个盒子
+    </div>
+</body>
+</html>

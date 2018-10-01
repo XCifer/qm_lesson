@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>weui 文件上传</title>
+    <link rel="stylesheet" href="">
+    <style>
+        *{
+            margin: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        a{
+            text-decoration: none;
+            color:#5ba24c;
+        }
+        ul,li{list-style: none}
+        a:link{color: #1aad19}
+        a:active{color: #fdbc3f}
+        html{-webkit-text-size-adjust: 100%}
+        body,html{height: 100%;}/******************************/
+        body{
+            font-family: -apple-system-font,Helvetica Neue,Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+        .container,.page{
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+        .container{
+            overflow: hidden;
+        }
+        .page{
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            z-index: 1;
+        }
+        .page__title{
+            font-size: 20px;
+            font-weight: 400;
+            text-align: left;
+        }
+        .page__hd>p{
+            color: #8d8f94;
+            margin-top: 5px;
+            font-size: 14px;
+            text-align: center;
+        }
+        .page__hd{
+
+            background-color: #f8f8f8;
+            padding: 40px;
+        }
+
+        .weui-cells{
+            margin-top: 1.17647059em;
+            line-height: 1.47058824;
+            background-color: #ffffff;
+        }
+        .weui-cell{
+            padding: 10px 15px;
+            position: relative;
+        }
+        .weui-cells:before{
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;top: 0;bottom: 0;
+            height: 1px ;
+            border-top:1px solid #e5e5e5;
+        }
+        .weui-uploader__hd{
+            align-items: center;
+            padding-bottom: 10px;
+        }
+        .weui-uploader__title{
+            font-size: 17px;
+            display: inline-block;
+        }
+        
+        .weui-uploader__info{
+            float:right;
+            color: #b2b2b2;
+            font-weight: 200;
+        }
+        
+        .weui-uploader__bd{
+            margin-bottom: -4px;
+            overflow: hidden;
+        }
+        .weui-uploader__files{
+            list-style: none;
+        }
+        .weui-uploader__file{
+            background: url("./image/pic.png") no-repeat ;
+            width: 80px;
+            height: 80px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="page uploader">
+            <div class="page__hd">
+                <h1 class="page__title">Uploader</h1>
+                <p>上传组件，一般配合<a href="#" class="link">组件Gallery</a>来使用。</p>
+            </div>
+
+            <div class="page__bd">
+                <div class="weui-cells">
+                    <div class="weui-cell">
+                        <div class="weui__bd">
+                            <div class="weui-uploader">
+                                <div class="weui-uploader__hd">
+                                    <p class="weui-uploader__title">图片上传</p>
+                                    <div class="weui-uploader__info">0/9</div>
+                                </div>
+                                <div class="weui-uploader__bd">
+                                    <ul class="weui-uploader__files" id="uploaderFiles">
+                                        <li class="weui-uploader__file" style="background-image:url(./image/pic.png)"></li>
+                                        <li class="weui-uploader__file" style="background-image:url(./image/pic.png)"></li>
+                                        <li class="weui-uploader__file" style="background-image:url(./image/pic.png)"></li>
+                                        <li class="weui-uploader__file weui-uploader__file_error" style="background-image:url(./image/pic.png)"></li>
+                                        <li class="weui-uploader__file weui-uploader__file_status" style="background-image:url(./image/pic.png)">
+                                            <div class="weui-uploader__file-content">50%</div>
+                                        </li>
+                                        <!-- 层次深度3-4层 -->
+                                        
+                                        
+                                    </ul>
+                                    <div class="weui-uploader__input-box">
+                                        <input type="file" class="weui-uploader__input" id="uploaderInput" accept="image/*" multiple>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page__ft">
+                <a href="#">
+                    <img src="https://weui.io/images/icon_footer_link.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>打地鼠</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <h1>
+        whack-a-mole!
+        <span class="score">0</span>
+    </h1>
+    <button class="start">Start!</button>
+    <div class="game">
+        <div class="hole hole1">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole2">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole3">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole4">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole5">
+            <div class="mole"></div>
+        </div>
+        <div class="hole hole6">
+            <div class="mole"></div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    const holes = document.querySelectorAll(".hole");
+    const scoreBoard = document.querySelector('.score');
+    const moles = document.querySelectorAll('.mole');
+    
+    
+
+    var score = 0;
+    var lastHole=null;//记录上一次是哪个洞，如果重复，重新获取随机值
+    var timeUp = false;
+    var isPlaying = false;
+    var button = document.querySelector(".start");
+    button.addEventListener('click',startGame);
+    function startGame(){
+        if (isPlaying) return;
+        isPlaying = true;
+        scoreBoard.textContent = 0;
+        timeUp = false;
+        score = 0;
+        peep();
+        setTimeout(() => {
+            timeUp =  true;
+            isPlaying =  false;
+            alert("time is up")
+        }, 20000);
+        
+    }
+    // function randomTime(min, max) {
+    //     return Math.round(Math.random()*(max-min)+min);//min~max random duration
+    // }
+
+    // function randomHole(holes) {
+    //     const idx = Math.floor(Math.random() * holes.length);
+    //     const hole = holes[idx];
+    //     if (hole == lastHole) {
+    //         console.log('Ah hah thats the same one bud');
+    //         return randomHole(holes);
+    //     }
+    //     lastHole = hole;
+    //     return hole;
+    // }
+
+    // function peep() {
+    //     const time = randomTime(500, 2000); 
+    //     // console.log(time);
+    //     // console.log(holes);
+    //     const hole = randomHole(holes);
+    //     // console.log(hole);
+    //     hole.classList.add('up');
+    //     setTimeout(() => {
+    //         hole.classList.remove('up');
+    //         if (!timeUp) 
+    //             peep();
+    //     }, time);
+    // }
+
+    // function bonk(e) {
+    //     // if (!e.isTrusted) return;
+    //     score++;
+    //     this.parentNode.classList.remove('up');
+    //     scoreBoard.textContent = score;
+    // }
+    // moles.forEach(mole => mole.addEventListener('click', bonk));
+
+    </script>
+</html>
