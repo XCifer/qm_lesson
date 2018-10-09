@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        .ball{
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: #000000;
+            position:absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let XStart = 0, YStart=0,XEnd = 1000, YEnd = 1000;
+        let time = 500;
+        let XSpeed = (XEnd-XStart)/time;
+        let ball = document.createElement('div');
+        ball.className = 'ball';
+        document.body.appendChild(ball);
+        ball.style.top = YStart+"px";
+        ball.style.left = XStart +"px";
+        let nowTime = 0;
+        let nowX = XSpeed * nowTime;
+        let nowY = 4.9*nowTime/60*nowTime/60;
+        let move = ()=>{
+            requestAnimationFrame(()=>{
+                nowTime++;
+                console.log(nowTime/60);
+                nowX = XSpeed * nowTime;
+                nowY = 4.9*nowTime*nowTime/3600;
+                ball.style.top = nowY+"px";
+                ball.style.left = nowX +"px";
+                move();
+                if (nowX>=YEnd){
+                    ball.parentNode.removeChild(ball);
+                    return
+                }
+            })
+        }
+        
+        move();
+       
+        
+</script>
+</body>
+</html>
