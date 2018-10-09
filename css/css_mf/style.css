@@ -1,0 +1,33 @@
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+body{
+    background-color: #ccc;
+    font-family: sans-serif;
+    margin: 0 auto;
+}
+header{
+    background-color: #f47d31;
+    display: block;
+    color: white;
+    text-align: center;
+}
+header h2{
+    margin: 0;
+}
+h1{
+    font-size: 72px;
+}
+h2{
+    font-size: 24px;
+    text-align: center;
+    color: #f47d31;
+}
+h4{
+    color: #f47d31;
+    background-color: #fff;
+}

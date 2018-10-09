@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <input type="text" id= "salary">
+<script>
+    const salaryInput = document.querySelector("#salary");
+    salaryInput.addEventListener("change",function(){
+        let salary = this.value;
+        console.log(salary,typeof salary);
+        alert(salary=salary*12);
+        alert(typeof salary)
+    })
+// salary   多少？ 工资， 绩效=2.5
+// 任务: 提供给财务 计算工具
+
+/*
+ *  功能：计算全年工资
+ * @params salary number
+ * @params level default C, in 'ABCD'
+ * @return number
+ */
+function totalSalary(salary, level = 'C') {
+  // if (level != 'A' && level != 'B' && level != 'C' && level != 'D') {
+  //   throw new Error('请选择绩效等级');
+  // }
+  aBonus = 6;
+  bBonus = 5;
+  cBonus = 2;
+
+  console.log(arguments);
+  if (arguments.length>2&& arguments[2]==='admin') {
+      
+  }
+
+  if (arguments.length == 0) {
+    throw new Error('请输入工资');
+  }
+
+  salary = Number(salary);
+
+  if (salary <= 0) {
+    throw new Error('工资输入错误， 请检查')
+  }
+
+  if ('ABCD'.indexOf(level) < 0) {
+    throw new Error('请选择绩效等级');
+  }
+
+  // 工资的严格性 
+
+  // 比较靠谱
+  if (level === 'A') {
+    return salary * (12 + aBonus); 
+  }
+
+  if (level === 'B') {
+    return salary * (12 + bBonus); 
+  }
+
+  if (level === 'C') {
+    return salary * (12 + cBonus); 
+  }
+
+  if (level === 'D') {
+    return salary * 12; 
+  }
+
+  
+}
+
+// let salary = prompt("请输入用户的工资");
+// let totalSalary2 = salary*(12+2.5);
+</script>
+</body>
+</html>
