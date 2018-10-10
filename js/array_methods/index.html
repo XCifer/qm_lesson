@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6 Array 新方法</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const race = '100m Dash';
+    const winners = ['Hunber Gath','Singa song',"Imda Bos"]
+    // var list = [];
+    // for (let index = 0; index < winners.length; index++) {
+    //     list.push({
+    //         name:winners[index],
+    //         race:race,
+    //         place:index+1
+    //     })
+        
+    // }
+    // console.log(list);
+
+    const win = winners.map((winner,index)=>{
+        return {name:winner,
+        race:race,
+        place:index+1}
+    })
+    //  箭头函数如果只有一行代码且为返回值，可省略return并在花括号外添加小括号
+    // const win = winners.map((winner,index)=>({
+    //     name:winner,race:race,place:index+1
+    // }))
+
+    console.log(win);
+
+</script>
+
+</html>
