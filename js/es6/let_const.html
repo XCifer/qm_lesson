@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const friends = ['aaaa','bbbb','cccc']
+        friends.push('dddd');
+        friends.push('eeee')
+        console.log(friends);    //const复杂数据类型内容可变（类型不可变）
+        
+        const num = 1;   简单类型不可变
+        num = 2;
+        
+
+        const person = {        }
+        person.name = "Wes";
+        person.age = 28;
+        console.log(person);
+
+        const wes = Object.freeze(person);
+        console.log(wes)
+
+        
+
+        // function a(){
+        //     console.log('fdfdfd',pizza)
+        //     const pizza = 'Deep fish'
+        // }
+        // a();
+    </script>
+</body>
+</html>

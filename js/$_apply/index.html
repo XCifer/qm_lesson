@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            const eleUserName = document.querySelector('.username');
+            const eleMotto = document.querySelector('.motto');
+            let xhr = null; //异步js 主动拉取的核心对象 
+            // 浏览器嗅探
+            if (window.XMLHttpRequest)
+                xhr = new XMLHttpRequest();
+            else //老版本浏览器
+                xhr = new ActiveXObject("Microsoft.XMLHTTP")
+            // 页面打开一个去url .json的通道, 后端数据服务 的通道
+            // 主动拉
+            xhr.open('get','/dream.json',true);
+            xhr.send();
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState === 4 && xhr.status == 200){
+                    const dream = JSON.parse(xhr.responseText);
+                    console.log(dream);
+                }
+                    
+            }
+        })
+        // $(function(){
+        //     const a = document.querySelector('.username');
+        //     console.log(a,88);
+        // })
+
+        // $(function(){
+            
+        //     $.getJSON('/dream.json',function(data){
+        //         console.log(data);
+        //         $('.username').html(data.username);
+        //         $('.motto').html(data.motto);
+        //     })
+        // })
+    </script>
+</head>
+<body>
+    <div class="username">
+    </div>
+    <div class="motto"></div>
+</body>
+</html>
