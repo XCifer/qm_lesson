@@ -17,8 +17,10 @@
         <text class="cart-del" bindtap="deleteList" data-index="{{index}}">x</text>
       </view>
       <view class="cart-footer">
-          <icon class="total-select" type="success" wx:ifz="{{selectAllStatus}}"
-          bindtap="selectAll">全选</icon>
+          <icon class="total-select" type="success" color="red" wx:if="{{selectAllStatus}}" bindtap="selectAll">全选</icon>
+          <icon class="total-select" type="circle" wx:else bindtap="selectAll">全选</icon>
+          <text class="amount">￥{{totalPrice}}</text>
+          <icon  />
       </view>
     </view>
   </view>

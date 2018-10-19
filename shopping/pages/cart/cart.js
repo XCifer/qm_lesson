@@ -8,7 +8,7 @@ Page({
         hasList: false,
         carts: [],
         totalPrice: 0,
-        selectAllStatus: true
+        selectAllStatus: false
     },
 
     /**
@@ -26,30 +26,64 @@ Page({
     },
     selectedList: function (e) {
         const index = e.currentTarget.dataset.index;
-        const carts = this.data.carts;
+        const carts = this.data.carts;   
         carts[index].selected = !carts[index].selected;
         this.setData({
-            carts
+            carts:carts,
+            selectAllStatus:this.getSelectStatus(),
+            totalPrice:this.getTotalPrice()
         })
 
     },
     deleteList:function(e){
         let index = e.currentTarget.dataset.index;
         let carts = this.data.carts;
-        carts = carts.filter((cart,i)=>{
-                return index!=i;
+        carts = carts.filter((element,i)=>{
+            return index!=i;
         })
         this.setData({
-            carts
+            carts:carts
         })
-        if(cart.length==0){
+        this.setData({
+            selectAllStatus:this.getSelectStatus(),
+            totalPrice:this.getTotalPrice(),
+
+        })
+        console.log(carts,this.data.totalPrice);
+        if(carts.length==0){
             this.data.hasList = false;
         }
+    }, 
+    selectAll:function(){
+        let selectAllStatus = this.data.selectAllStatus;
+        let carts = this.data.carts;
+        carts.forEach(element => {
+            element.selected = !selectAllStatus;
+        });
+        this.setData({carts:carts,
+            selectAllStatus:this.getSelectStatus(),
+            totalPrice:this.getTotalPrice()
+        })
     },
-    function:function(){
-        let selectCount
+    minusCount:function(e){
+        const index = e.currentTarget.dataset.index;
+        const carts = this.data.carts;
+        if (carts[index].num>1)
+            carts[index].num--;
+        this.setData({
+            carts:carts,
+            totalPrice:this.getTotalPrice()
+        })
     },
-
+    addCount:function(e){
+        const index = e.currentTarget.dataset.index;
+        const carts = this.data.carts;     
+        carts[index].num++;
+        this.setData({
+            carts:carts,
+            totalPrice:this.getTotalPrice()
+        })
+    },
     /**
      * 生命周期函数--监听页面显示
      */
@@ -75,7 +109,9 @@ Page({
                     }
                 ]
             })
-            this.getTotalPrice();
+            this.setData({
+                totalPrice: this.getTotalPrice()
+            })
         }, 1000);
     },
     getTotalPrice: function () {
@@ -86,9 +122,17 @@ Page({
                 total += carts[i].num * carts[i].price;
             }
         }
-        this.setData({
-            totalPrice: total.toFixed(2)
-        })
+        return total.toFixed(2)
+
+    },
+    getSelectStatus:function(){
+        let carts = this.data.carts;
+        for (let i = 0; i < carts.length; i++) {
+            if (!carts[i].selected) {
+                return false;
+            }         
+        }
+        return true;
     },
 
     /**
