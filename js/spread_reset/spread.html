@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="people">
+        <p>Wes</p>
+        <p>kait</p>
+        <p>Randy</p>
+    </div>
+    <script>
+        const people = Array.from(document.querySelectorAll(".people p"));// NodeList 伪数组(类数组) .length 但不能直接map
+        const names = people.map((person)=>person.textContent)
+        const a = {
+            i:['1','2','3','45','6']
+        }
+
+        const list = ['a','b',...a.i]//spread 运算符
+
+        console.log(list)
+    </script>
+</body>
+</html>
