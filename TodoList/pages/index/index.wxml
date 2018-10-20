@@ -21,6 +21,7 @@
             <text class="{{status == '3' ? 'active' : ''}}" bind:tap="showStatus" data-status="3">
                 已完成
             </text>
+            
         </view>
         <view class="add">
             <button class="mini-btn" type="warn" size="mini" bindtap="addTodoShow">+添加</button>
