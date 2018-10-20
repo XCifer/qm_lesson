@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class='calendar'>
+  <calendar weeks-type="full-en" cell-size="30" next="{{false}}" prev="{{false}}" show-more-days="{{true}}" calendar-style="demo6-calendar" header-style="calendar-header" board-style="calendar-board" active-type="rounded"/>
+</view>
+<view class='icon'>
+  <icon type="search" color="red" ></icon>
+</view>
