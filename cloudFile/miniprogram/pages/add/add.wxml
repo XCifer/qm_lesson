@@ -1,0 +1,1 @@
+<van-button type='warning' block bind:tap="upload">上传图片</van-button>
