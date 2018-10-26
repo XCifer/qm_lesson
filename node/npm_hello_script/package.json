@@ -1,0 +1,18 @@
+{
+  "name": "npm_hello_script",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint:js": "eslint *.js",
+    "lint:CSS": "stylelint *.less",
+    "test": "npm-run-all --parallel lint:*"
+  },
+  "keywords": [],
+  "author": "XCifer <13607960126@139.com> (http://github.com/XCifer)",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "stylelint-config-standard": "^18.2.0"
+  }
+}
