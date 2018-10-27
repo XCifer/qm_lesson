@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //js是单线程语言 ，事件监听 Event Loop
+        //setTimeOut, cb 挂在到Event Loop
+        const aaa = async ()=>{
+            let result = await new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    console.log('a')
+                    resolve('correct');
+                }, 1000);
+            })
+            console.log(result)
+            console.log('bbb')
+        }
+        aaa();
+        
+    </script>
+</body>
+</html>
