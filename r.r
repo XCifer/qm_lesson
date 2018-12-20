@@ -1,11 +1,11 @@
 bino.gen <- function (samples = 10000, n = 20, pi = 0.5)
 {
-  #ÔÚ£¨0£¬1£©ÖĞ×ösamples*n´Î¿É·Å»ØÊµÑé¡£
+  #ï¿½Ú£ï¿½0ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½samples*nï¿½Î¿É·Å»ï¿½Êµï¿½é¡£
   values <- sample(c(0, 1), samples * n, replace = TRUE,
                    prob = c(1 - pi, pi)) 
-  #´´½¨¾ØÕó£¬ÉèÖÃÁĞÎªn
+  #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªn
   value.mat <- matrix(values, ncol = n)
-  #½«¾ØÕóvalue.mat ÖĞµÄÖµÓ¦ÓÃsumº¯Êı£¬±ß½çÎª1
+  #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½value.mat ï¿½Ğµï¿½ÖµÓ¦ï¿½ï¿½sumï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½Îª1
   Successes <- apply(value.mat, 1, sum)
   a1 <- round((table(Successes)/samples), 3)
   b1 <- round(dbinom(0:n, n, pi), 3)
@@ -15,9 +15,9 @@ bino.gen <- function (samples = 10000, n = 20, pi = 0.5)
        main = " Theoretical Values Superimposed Over Histogram of Simulated Values")
   x <- 0:n
   fx <- dbinom(x, n, pi)
-  #ÔÚÖ±·½Í¼Ã¿¸öÌõÄ¿ÕıÖĞ¼äÌí¼Ó´¹Ö±Ïß
+  #ï¿½ï¿½Ö±ï¿½ï¿½Í¼Ã¿ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Ğ¼ï¿½ï¿½ï¿½Ó´ï¿½Ö±ï¿½ï¿½
   lines(x, fx, type = "h")
-  #ÔÚÖ±·½Í¼Ã¿¸ö×î¸ßµãÌí¼ÓÊµĞÄÔ²µã
+  #ï¿½ï¿½Ö±ï¿½ï¿½Í¼Ã¿ï¿½ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Ô²ï¿½ï¿½
   lines(x, fx, type = "p", pch = 16)
   list(simulated.distribution = a1, theoretical.distribution = b1)
 } 
@@ -34,7 +34,7 @@ table(x)/1000
 sum(dbinom(6:10,10,0.33))
 #1-p(x<=5)
 1-pbinom(5,10,0.33)
-#Á½Õß»¥²¹ÎªÈ«¼¯
+#ï¿½ï¿½ï¿½ß»ï¿½ï¿½ï¿½ÎªÈ«ï¿½ï¿½
 
 
 
@@ -60,9 +60,9 @@ x<- 0:15
 px<- dgeom(x,.3)
 plot(x,px,type = 'h')
 xs<-rep(0:15,round(dgeom(0:15,.3)*100000,0))
-#ÖØ¸´1-15ÖĞµÄÊı£¬Ã¿¸ö¶ÔÓ¦0-15 p=0.3¼¸ºÎ·Ö²¼100000±¶µÄÕûÊı´Î
+#ï¿½Ø¸ï¿½1-15ï¿½Ğµï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½Ó¦0-15 p=0.3ï¿½ï¿½ï¿½Î·Ö²ï¿½100000ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 plot(ecdf(xs),main='CDF of X~geom(0.3)',ylab = 'P(X<=x)')
-#ecdf¼ÆËã¾­Ñé»ıÀÛ·Ö²¼º¯Êı
+#ecdfï¿½ï¿½ï¿½ã¾­ï¿½ï¿½ï¿½ï¿½Û·Ö²ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -94,3 +94,8 @@ pnorm(115, 100, 10) - pnorm(90, 100, 10)
 qnorm(0.9, 100, 10)
 qnorm(0.1 + pnorm(105, 100, 10), 100, 10)
 
+x<-(0:100)/100
+px1<-dbinom(3,5,x)
+px2<-dbinom(2,3,x)
+plot(x, px2, type = "l", xlab = "x", ylab="P(X = x)",main = "PDF of X~Bin(2,3,x) and X~Bin(3,5,x)",col="blue")
+lines(x,px1,col="red")
